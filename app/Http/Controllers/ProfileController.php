@@ -39,6 +39,8 @@ class ProfileController extends Controller
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
             $request->user()->save();
+            $request->session()
+                ->put('success', 'Your profile settings was successfully changed.');
         }
         
         return view('profile.settings', [

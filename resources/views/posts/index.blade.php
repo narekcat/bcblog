@@ -4,6 +4,7 @@
 
     <div class = "panel-body">
         @include('common.errors')
+        @include('common.success')
         
         <h3 class = "text-center">Add new post</h3>
         <form action = "{{ url('posts') }}" method = "POST" class = "form-horizontal">

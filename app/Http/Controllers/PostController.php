@@ -51,6 +51,8 @@ class PostController extends Controller
             'body' => $request->body
         ]);
 
+        $request->session()
+            ->put('success', 'Your post was successfully added.');
         return redirect('/posts');
     }
 
@@ -92,6 +94,8 @@ class PostController extends Controller
                 $post->title = $request->title;
                 $post->body = $request->body;
                 $post->save();
+                $request->session()
+                    ->put('success', 'Your post was successfully edited.');
             } else {
                 return view('posts.edit', [
                     'post' => $post,
@@ -116,7 +120,8 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect('/posts');
+        return redirect('/posts')
+            ->with('success', 'Your post was successfully deleted.');
     }
 
     /**

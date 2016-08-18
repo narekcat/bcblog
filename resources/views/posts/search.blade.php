@@ -6,6 +6,7 @@
         <h3>Search results</h3>
 
         @include('common.errors')
+        @include('common.success')
 
         @if (count($posts) > 0)
             <div class="panel panel-default">

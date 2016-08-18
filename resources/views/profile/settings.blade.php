@@ -4,6 +4,7 @@
 
     <div class = "panel-body">
         @include('common.errors')
+        @include('common.success')
 
         <h3 class = "text-center">Edit profile settings</h3>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/settings') }}">

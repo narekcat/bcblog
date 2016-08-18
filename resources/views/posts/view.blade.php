@@ -3,6 +3,9 @@
 @section('content')
 
     <div class = "panel-body">
+        @include('common.errors')
+        @include('common.success')
+        
         <div class = "blog-post">
             <h2 class = "blog-post-title">{{ $post->title }}</h2>
             <p clas = "blog-post-meta">

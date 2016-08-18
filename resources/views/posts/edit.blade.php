@@ -4,6 +4,7 @@
 
     <div class = "panel-body">
         @include('common.errors')
+        @include('common.success')
 
         <h3 class = "text-center">Edit post</h3>
         <form action = "{{ url('posts/' . $post->id) }}" method = "POST" class = "form-horizontal">

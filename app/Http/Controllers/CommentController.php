@@ -41,7 +41,8 @@ class CommentController extends Controller
             'user_id' => $request->user()->id,
         ]);
 
-        return redirect('posts/' . $post->id);
+        return redirect('posts/' . $post->id)
+            ->with('success', 'Your comment was successfully added.');
     }
 
     /**
@@ -58,6 +59,7 @@ class CommentController extends Controller
         $postId = $comment->post_id;
         $comment->delete();
 
-        return redirect('/posts/' . $postId);
+        return redirect('/posts/' . $postId)
+            ->with('success', 'Your comment was successfully deleted.');
     }
 }
